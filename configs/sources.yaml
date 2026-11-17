@@ -1,0 +1,17 @@
+cicids2017:
+  landing: https://www.unb.ca/cic/datasets/ids-2017.html
+  url: https://cicresearch.ca/CICDataset/CIC-IDS-2017/Dataset/CSVs/MachineLearningCSV.zip
+  filename: MachineLearningCSV.zip
+  sha256: null
+  expected_min_csvs: 8
+  label_column: Label
+  minimum_columns: 70
+nftoniotv2:
+  landing: https://staff.itee.uq.edu.au/marius/NIDS_datasets/
+  url: https://rdm.uq.edu.au/files/a4ad7080-ef9c-11ed-a964-b70596e96ad5
+  filename: NF-ToN-IoT-v2.zip
+  sha256: null
+  expected_min_csvs: 1
+  label_column: Attack
+  minimum_columns: 43
+  exclude_files: [NetFlow_v2_Features.csv]

@@ -1,0 +1,10 @@
+extends: default.yaml
+dataset: cicids2017
+output: outputs/cicids2017
+data:
+  raw_dir: data/raw/cicids2017
+  processed_dir: data/processed/cicids2017
+  label_column: Label
+  train_fraction: 0.2
+federation:
+  max_attack_classes: 5

@@ -1,0 +1,23 @@
+extends: controlled_scenarios.yaml
+output: outputs/verification/controlled
+device: cpu
+federation:
+  clients: 4
+  rounds: 2
+  colluding_fraction: 0.0
+privacy:
+  h_min: 3
+  epsilon: 8.0
+  noise_rng: reproducible
+local:
+  epochs: 1
+  batch_size: 32
+model:
+  channels: [4, 4, 8, 8, 8, 8]
+controlled:
+  tasks: 1
+  samples_per_client: 80
+  test_per_class: 20
+evaluation:
+  private_audit: true
+  attack_trees: 10

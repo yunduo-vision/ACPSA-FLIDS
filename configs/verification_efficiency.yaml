@@ -1,0 +1,5 @@
+extends: default.yaml
+output: outputs/verification/efficiency
+experiments:
+  clients: [10, 20, 50, 100, 150, 200]
+  dropout_rates: [0.0]

@@ -1,0 +1,84 @@
+# Paper settings except entries documented as engineering defaults in docs/assumptions.md.
+seed: 42
+device: auto
+output: outputs/acpsa
+dataset: cicids2017
+data:
+  raw_dir: data/raw/cicids2017
+  processed_dir: data/processed/cicids2017
+  chunksize: 100000
+  exclude_files: []
+  encoding: latin1
+  label_column: Label
+  train_fraction: 0.2
+  full_test_fraction: 0.1
+  regular_test_fraction: 0.2
+  validation_fraction: 0.1
+  log_patterns: [byte, packet, pkt, duration, iat, length, len, bulk, active, idle]
+  drop_patterns: ['^flow_id$', '^(source|destination|src|dst)_ip$', '^timestamp$', '^unnamed', '^fwd_header_length_1$']
+federation:
+  clients: 100
+  rounds: 100
+  alpha: 0.1
+  max_attack_classes: 5
+  client_dropout: 0.0
+  colluding_fraction: 0.2
+  unavailable_nodes: []
+local:
+  epochs: 5
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 0.0
+model:
+  channels: [32, 32, 64, 64, 128, 128]
+  kernel_size: 3
+  normalization: group
+probing:
+  count: 10
+  thresholds: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95]
+clipping:
+  feature: 1.0
+  classes: 0.1
+privacy:
+  epsilon: 2.0
+  delta: 0.00001
+  sigma: null
+  h_min: 80
+  noise_rng: secure
+secure_aggregation:
+  enabled: true
+  nodes: 5
+  threshold: 3
+  prime: 2147483647
+  scale: 10000
+aggregation:
+  method: bayesian
+  prior_mode: history
+  prior_variance: 0.0001
+  prior_floor: 0.00000001
+  prior_ceiling: 1.0
+  prior_decay: 0.9
+  public_prior_file: null
+  min_support: 1.0
+  feature_lr: 1.0
+  class_lr: 1.0
+variant: acpsa
+evaluation:
+  batch_size: 4096
+  every: 1
+  minority_classes: [DoS-Slowhttptest, Web Attack, Bot, Infiltration]
+  private_audit: false
+  attack_test_fraction: 0.3
+  attack_trees: 200
+  attack_max_depth: 8
+  attack_min_samples_leaf: 2
+experiments:
+  seeds: [42, 43, 44]
+  budgets: [0.5, 1, 2, 4, 8, .inf]
+  alphas: [0.1, 0.5, 1.0, 10.0]
+  clients: [10, 20, 50, 100, 150, 200]
+  clipping_values: [0.1, 0.5, 1.0, 2.0]
+  dropout_rates: [0.0, 0.1, 0.2, 0.3]
+runtime:
+  threads: 2
+  checkpoint_every: 1

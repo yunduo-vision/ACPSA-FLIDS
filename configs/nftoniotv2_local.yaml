@@ -1,0 +1,5 @@
+extends: nftoniotv2.yaml
+output: outputs/nftoniotv2_local
+data:
+  raw_dir: D:/ACPSA_FLIDS_data/raw/nftoniotv2
+  processed_dir: D:/ACPSA_FLIDS_data/processed/nftoniotv2

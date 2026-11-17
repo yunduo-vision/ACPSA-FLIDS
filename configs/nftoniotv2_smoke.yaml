@@ -1,0 +1,15 @@
+extends: nftoniotv2_local.yaml
+# Explicit real-data execution check, not the Section IV full experiment.
+output: outputs/verification/nftoniotv2_real
+data:
+  processed_dir: D:/ACPSA_FLIDS_data/processed/nftoniotv2_smoke
+  train_fraction: 0.001
+federation:
+  clients: 100
+  rounds: 1
+local:
+  epochs: 1
+privacy:
+  epsilon: 8.0
+evaluation:
+  private_audit: true

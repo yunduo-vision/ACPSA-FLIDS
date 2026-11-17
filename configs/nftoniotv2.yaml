@@ -1,0 +1,14 @@
+extends: default.yaml
+dataset: nftoniotv2
+output: outputs/nftoniotv2
+data:
+  raw_dir: data/raw/nftoniotv2
+  processed_dir: data/processed/nftoniotv2
+  label_column: Attack
+  exclude_files: [NetFlow_v2_Features.csv]
+  train_fraction: 0.1
+  drop_patterns: ['^ipv[46]_(src|dst)_addr$', '^(src|dst|source|destination)_ip$', '^flow_id$', '^timestamp$', '^label$', '^unnamed', '^dns_query_id$', 'transaction.*id']
+federation:
+  max_attack_classes: 6
+evaluation:
+  minority_classes: [Backdoor, MITM, Ransomware]

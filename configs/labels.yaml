@@ -1,0 +1,27 @@
+cicids2017:
+  benign: Benign
+  bot: Bot
+  ddos: DDoS
+  dos goldeneye: DoS-GoldenEye
+  dos hulk: DoS-Hulk
+  dos slowhttptest: DoS-Slowhttptest
+  dos slowloris: DoS-Slowloris
+  ftp patator: FTP-Patator
+  ssh patator: SSH-Patator
+  heartbleed: Heartbleed
+  infiltration: Infiltration
+  portscan: PortScan
+  web attack brute force: Web Attack
+  web attack sql injection: Web Attack
+  web attack xss: Web Attack
+nftoniotv2:
+  benign: Benign
+  backdoor: Backdoor
+  ddos: DDoS
+  dos: DoS
+  injection: Injection
+  mitm: MITM
+  password: Password
+  ransomware: Ransomware
+  scanning: Scanning
+  xss: XSS

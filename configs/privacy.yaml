@@ -1,0 +1,4 @@
+extends: cicids2017.yaml
+output: outputs/privacy
+evaluation:
+  private_audit: true
